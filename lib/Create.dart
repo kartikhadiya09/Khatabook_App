@@ -1,5 +1,6 @@
 import 'package:firebase_login/class/Auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class Create extends StatefulWidget {
   const Create({Key? key}) : super(key: key);
@@ -20,20 +21,35 @@ class _CreateState extends State<Create> {
           children: [
             Card(
               child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 230,
-                child: Image.asset(
-                  "assets/l1.jpg",
-                  fit: BoxFit.cover,
+                height: 200,
+
+                width: MediaQuery.of(context).size.height,
+                child:   ClipPath(
+                  clipper: WaveClipperOne(reverse: false),
+                  child: Container(
+                    height: 100,
+                    color: Colors.greenAccent,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.description,size: 50,color: Colors.white,),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text("Create Accounte",style: TextStyle(fontSize: 55,fontWeight: FontWeight.bold,color: Colors.white),),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
+            SizedBox(height: 30,),
             Card(
               child: Container(
                 height: 50,
                 width: 330,
                 decoration: BoxDecoration(
-                    color: Colors.black26,
+                    color: Colors.black12,
                     borderRadius: BorderRadius.circular(6)),
                 alignment: Alignment.center,
                 child: Padding(
@@ -50,23 +66,24 @@ class _CreateState extends State<Create> {
                       hintText: 'abc123@gmail.com ',
                       label: Text("Email"),
                       // labelStyle: TextStyle(color: Colors.red),
-                      floatingLabelStyle: TextStyle(color: Colors.red),
+                      floatingLabelStyle: TextStyle(color: Colors.teal),
 
                       prefixIcon: Icon(
                         Icons.email,
-                        color: Colors.red,
+                        color: Colors.teal,
                       ),
                     ),
                   ),
                 ),
               ),
             ),
+            SizedBox(height: 10,),
             Card(
               child: Container(
                 height: 50,
                 width: 330,
                 decoration: BoxDecoration(
-                    color: Colors.black26,
+                    color: Colors.black12,
                     borderRadius: BorderRadius.circular(6)),
                 alignment: Alignment.center,
                 child: Padding(
@@ -100,11 +117,11 @@ class _CreateState extends State<Create> {
                       ),
                       label: Text("Password"),
                       // labelStyle: TextStyle(color: Colors.red),
-                      floatingLabelStyle: TextStyle(color: Colors.red),
+                      floatingLabelStyle: TextStyle(color: Colors.teal),
 
                       prefixIcon: Icon(
                         Icons.lock,
-                        color: Colors.red,
+                        color: Colors.teal,
                       ),
                     ),
                   ),
@@ -122,7 +139,7 @@ class _CreateState extends State<Create> {
                   height: 50,
                   width: 150,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.greenAccent.shade700,
                   borderRadius: BorderRadius.circular(15)
                   ),
                   child: Center(

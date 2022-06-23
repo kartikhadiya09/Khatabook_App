@@ -43,15 +43,17 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     chek();
     return Scaffold(
-      backgroundColor: Colors.pinkAccent,
+      backgroundColor: Colors.greenAccent,
       body: Container(
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.fastfood,size: 80,color: Colors.white,),
+            Icon(Icons.description,size: 80,color: Colors.white,),
             SizedBox(height: 15,),
-            Text("Taste Me",style: TextStyle(fontSize: 35,letterSpacing: 1,fontWeight: FontWeight.bold,color: Colors.white),)
+            Text("Note Keeper",style: TextStyle(fontSize: 35,letterSpacing: 1,fontWeight: FontWeight.bold,color: Colors.white),),
+            SizedBox(height: 15,),
+
           ],
         ),
       ),

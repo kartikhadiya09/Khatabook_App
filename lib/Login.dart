@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:firebase_login/Create.dart';
 import 'package:firebase_login/class/Auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -22,13 +23,26 @@ class _LoginState extends State<Login> {
         body: Stack(
           children: [
             Container(
-              height: 300,
+              height: 250,
 
               width: MediaQuery.of(context).size.height,
-              child: Image.asset(
-                "assets/l1.jpg",
-                fit: BoxFit.cover,
+            child:   ClipPath(
+              clipper: WaveClipperOne(reverse: false),
+              child: Container(
+                height: 120,
+                color: Colors.greenAccent,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.description,size: 50,color: Colors.white,),
+                    SizedBox(
+                      height: 10,
+                    ),
+                Text("Log In",style: TextStyle(fontSize: 65,fontWeight: FontWeight.bold,color: Colors.white),),
+                  ],
+                ),
               ),
+            ),
             ),
             Container(
               alignment: Alignment.center,
@@ -42,7 +56,7 @@ class _LoginState extends State<Login> {
                     height: 50,
                     width: 330,
                     decoration: BoxDecoration(
-                        color: Colors.black26,
+                        color: Colors.black12,
                         borderRadius: BorderRadius.circular(20)),
                     alignment: Alignment.center,
                     child: Padding(
@@ -59,11 +73,11 @@ class _LoginState extends State<Login> {
                           hintText: 'abc123@gmail.com ',
                           label: Text("Email"),
                           // labelStyle: TextStyle(color: Colors.red),
-                          floatingLabelStyle: TextStyle(color: Colors.red),
+                          floatingLabelStyle: TextStyle(color: Colors.teal),
 
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.red,
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -76,7 +90,7 @@ class _LoginState extends State<Login> {
                     height: 50,
                     width: 330,
                     decoration: BoxDecoration(
-                        color: Colors.black26,
+                        color: Colors.black12,
                         borderRadius: BorderRadius.circular(20)),
                     alignment: Alignment.center,
                     child: Padding(
@@ -109,11 +123,11 @@ class _LoginState extends State<Login> {
                           ),
                           label: Text("Password"),
                           // labelStyle: TextStyle(color: Colors.red),
-                          floatingLabelStyle: TextStyle(color: Colors.red),
+                          floatingLabelStyle: TextStyle(color: Colors.teal),
 
                           prefixIcon: Icon(
                             Icons.lock,
-                            color: Colors.red,
+                            color: Colors.teal,
                           ),
                         ),
                       ),
@@ -140,7 +154,7 @@ class _LoginState extends State<Login> {
                       height: 50,
                       width: 280,
                       decoration: BoxDecoration(
-                          color: Colors.pinkAccent,
+                          color: Colors.greenAccent,
                           borderRadius: BorderRadius.circular(25)
                       ),
                       child: Center(
@@ -159,7 +173,7 @@ class _LoginState extends State<Login> {
                         onTap: (){
                        Navigator.pushNamed(context,  'Create');
                         },
-                          child: Text("Sign Up",style: TextStyle(fontSize: 15,color: Colors.red),)),
+                          child: Text("Sign Up",style: TextStyle(fontSize: 15,color: Colors.green),)),
 
                     ],
                   ),
