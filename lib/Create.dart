@@ -2,14 +2,14 @@ import 'package:firebase_login/class/Auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
-class Create extends StatefulWidget {
-  const Create({Key? key}) : super(key: key);
+class SingIn_page extends StatefulWidget {
+  const SingIn_page({Key? key}) : super(key: key);
 
   @override
-  State<Create> createState() => _CreateState();
+  State<SingIn_page> createState() => _CreateState();
 }
 
-class _CreateState extends State<Create> {
+class _CreateState extends State<SingIn_page> {
   bool See = false;
   TextEditingController Email_id = TextEditingController();
   TextEditingController Password = TextEditingController();

@@ -1,6 +1,4 @@
 import 'dart:ui';
-
-import 'package:firebase_login/Create.dart';
 import 'package:firebase_login/class/Auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';

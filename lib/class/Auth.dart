@@ -5,12 +5,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class Auth {
+class Auth  {
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void create_Accounte(String email, String password,BuildContext context ) {
     auth.createUserWithEmailAndPassword(email: email, password: password).whenComplete(() => Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => Home())));
+
   }
 
   void Login(String email, String password, BuildContext context) async {
@@ -32,6 +33,7 @@ class Auth {
         ));
       }
     }
+
   }
 
   bool Chek_curent_User(BuildContext context) {
@@ -47,5 +49,6 @@ class Auth {
   void SingOut(BuildContext context) {
     auth.signOut().whenComplete(() => Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => Splash())));
+
   }
 }

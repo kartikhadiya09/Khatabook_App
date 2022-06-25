@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:firebase_login/Create.dart';
 import 'package:firebase_login/Home.dart';
 import 'package:firebase_login/Login.dart';
@@ -17,7 +16,7 @@ void main() async{
       routes: {
         '/':(context)=>Splash(),
         'Login':(context)=>Login(),
-        'Create':(context)=>Create(),
+        'Create':(context)=>SingIn_page(),
         'Home':(context)=>Home(),
       },
     )

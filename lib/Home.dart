@@ -15,9 +15,11 @@ class _HomeState extends State<Home> {
   FirebaseAuth auth = FirebaseAuth.instance;
   var dt = DateTime.now();
   String realtz = DateFormat("EEEEE , dd , yyyy").format(DateTime.now());
+  bool work = true;
 
   @override
   Widget build(BuildContext context) {
+    bool value= false;
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
@@ -28,6 +30,20 @@ class _HomeState extends State<Home> {
         ),
         backgroundColor: Colors.teal.shade700,
         title: Text("Home"),
+        actions: [
+          ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+            child: Card(
+              color: Colors.white,
+
+              child: Container(
+                height: 50,
+                width: 50,
+                
+              ),
+            ),
+          ),
+        ],
       ),
       body: Card(
         color: Colors.tealAccent.shade100,
@@ -96,6 +112,27 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+              Card(
+                color: Colors.teal,
+                child: Container(
+                  height: 60,
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Radio(value:work, groupValue: "", onChanged: (value){
+                        setState(() {
+
+                        });
+                      }),
+                      Text("Pake a truash out ",style: TextStyle(fontSize: 22,fontWeight: FontWeight.w400),),
+                      Icon(Icons.edit),
+                      Icon(Icons.delete),
+                    ],
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
